@@ -1,10 +1,12 @@
 extends KinematicBody2D
 
 var _position = Vector2(0,0)
+var motion = true
+
 export(int) var speed = 150
 export(int) var life = 3
 
-func move_controllers():
+func motion_controller():
 	
 	if Input.is_action_pressed("right"):
 		_position.x = speed
@@ -31,7 +33,23 @@ func move_controllers():
 	_position.x = lerp(_position.x, 0, 0.1)
 	_position.y = lerp(_position.y, 0, 0.1)
 	
-#	// ------------------ function end -----------------
+#// ------------------ function end -----------------
 
+func action_controller():
+	if Input.is_key_pressed(32):
+		motion = false
+		$AnimatedSprite.play("punch")
+	else:
+		motion = true
+#// ------------------ function end -----------------
+
+func enemy_collision():
+	if Input.is_action_pressed("right"):
+	 life = life - 1
+	
 func _physics_process(delta):
-	move_controllers()
+#	enemy_collision()
+
+	if motion:
+		motion_controller()
+	action_controller()
