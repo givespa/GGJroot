@@ -8,10 +8,32 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "SpriteBase",
+"class": "AxEnemy",
+"language": "GDScript",
+"path": "res://prefab/enemies/AxEnemy.gd"
+}, {
+"base": "SpriteBase",
+"class": "Player",
+"language": "GDScript",
+"path": "res://prefab/player/Player.gd"
+}, {
+"base": "KinematicBody2D",
+"class": "SpriteBase",
+"language": "GDScript",
+"path": "res://scripts/SpriteBase.gd"
+} ]
+_global_script_class_icons={
+"AxEnemy": "",
+"Player": "",
+"SpriteBase": ""
+}
+
 [application]
 
 config/name="GGJroot"
-run/main_scene="res://levels/Level1.tscn"
+run/main_scene="res://scenes/Gameplay.tscn"
 config/icon="res://icon.png"
 
 [display]

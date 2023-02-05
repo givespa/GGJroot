@@ -1,10 +1,6 @@
-extends KinematicBody2D
+class_name Player extends SpriteBase
 
-var _position = Vector2(0,0)
 var motion = true
-
-export(int) var speed = 150
-export(int) var life = 3
 
 func motion_controller():
 	
@@ -48,8 +44,7 @@ func enemy_collision():
 	 life = life - 1
 	
 func _physics_process(delta):
-#	enemy_collision()
-
-	if motion:
-		motion_controller()
-	action_controller()
+	if self.activatedController:
+		if motion:
+			motion_controller()
+		action_controller()
