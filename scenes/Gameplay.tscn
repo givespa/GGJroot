@@ -7,7 +7,7 @@
 [ext_resource path="res://scripts/GlobalController.gd" type="Script" id=5]
 [ext_resource path="res://assets/maps/Background.tres" type="TileSet" id=6]
 
-[node name="Level1" type="Node2D"]
+[node name="Gameplay" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="Background" type="TileMap" parent="."]
